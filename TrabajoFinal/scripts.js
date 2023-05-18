@@ -1,7 +1,12 @@
+//Inicio variables necesarias
+
 let plantas = [];
 let familiaSelect;
 let habitatSelect;
 let temperaturaSelect;
+
+
+// fetch para llamar al array json
 
 document.addEventListener("DOMContentLoaded", function() {
   fetch('https://ambientedepruebas.xyz/coderhouse/data.json')
@@ -23,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
         habitats.add(planta.Luz);
         temperaturas.add(planta.Temperatura);
       });
-
+// Completo los dropdowns con el json
       fillDropdown(familiaSelect, Array.from(familias).sort());
       fillDropdown(habitatSelect, Array.from(habitats).sort());
       fillDropdown(temperaturaSelect, Array.from(temperaturas).sort());
@@ -31,6 +36,8 @@ document.addEventListener("DOMContentLoaded", function() {
     .catch(error => {
       console.error("Error al cargar los datos del archivo JSON:", error);
     });
+
+// funciones de busqueda
 
   const botonBuscar = document.getElementById("buscar");
   const resultadoDiv = document.getElementById("resultado");
@@ -84,12 +91,14 @@ document.addEventListener("DOMContentLoaded", function() {
         icon: "success",
         confirmButtonText: "Cerrar"
       });
-
+      // constante historial para guardar las busquedas en local storage
       const historial = JSON.parse(localStorage.getItem("historialBusquedas")) || [];
       historial.push(resultados);
       localStorage.setItem("historialBusquedas", JSON.stringify(historial));
     }
   });
+
+  // valido campos para modal
 
   function validarCampos() {
     if (
@@ -121,13 +130,13 @@ document.addEventListener("DOMContentLoaded", function() {
       selectElement.appendChild(opcion);
     });
   }
-
+// limpiar historial
   const botonLimpiar = document.getElementById("limpiarLocalStorage");
   botonLimpiar.addEventListener("click", function(event) {
     event.preventDefault();
     limpiarLocalStorage();
   });
-
+// ver historial
   const botonHistorial = document.getElementById("historialBusquedas");
   botonHistorial.addEventListener("click", function(event) {
     event.preventDefault();
