@@ -1,0 +1,67 @@
+body {
+  background-image: url("fondo.jpeg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+  position: fixed;
+  top: 200px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+h1, h2 {
+  color: white;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  color: white;
+  text-align: center;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+select {
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #ef2671;
+  border: none;
+  color: #FFFFFF;
+  font-size: 16px;
+  padding: 8px 16px;
+  margin-top: 16px;
+  cursor: pointer;
+  width: 100%;
+  max-width: 200px;
+}
+
+button:hover {
+  background-color: #5E5E5E;
+}
+
+#resultado {
+  background-color: #FFFFFF;
+  border: 2px solid #2647ef;
+  padding: 16px;
+  margin-top: 20px;
+  font-size: 16px;
+  color: #5E5E5E;
+  max-width: 500px;
+}
+
+.hidden {
+  display: none;
+}
